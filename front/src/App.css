@@ -1,0 +1,199 @@
+/* Reset defaults */
+body, ul {
+  margin: 0;
+  padding: 0;
+  border:2px solid black
+}
+ul {
+  list-style: none;
+}
+
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* title left, menu right */
+  align-items: center;
+  padding: 0 20px;
+  background-color: #333; /* dark background */
+  height: 60px;
+  width:98vw;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Navbar title */
+.navbar h1 {
+  color: #fff;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+/* Menu list */
+.navbar ul {
+  display: flex;
+}
+
+/* Each menu item */
+.navbar li {
+  margin-left: 20px;
+}
+
+/* Interactive link styling */
+.navbar li {
+  cursor: pointer;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.navbar li:hover {
+  color: #ffd700; /* golden highlight */
+  transform: translateY(-2px);
+}
+
+/* Form container */
+.form {
+  max-width: 600px;
+  height:82vh;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Each input group */
+.form-control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+/* Labels */
+.form-control label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+/* Input fields */
+.input {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.input:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+  outline: none;
+}
+
+/* Submit Button */
+button[type="submit"] {
+  background-color: #3498db;
+  color: white;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+button[type="submit"]:active {
+  transform: translateY(0);
+}
+
+
+/* Container holding all cards */
+.itemy {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  height:95vh;
+  width:110vw;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* Individual card */
+.card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Card body */
+.card-body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Item title */
+.title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Detailed text fields */
+.timer {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.homebox{
+  height:93vh;
+  width:100vw;
+  display:flex;
+  align-items: center;
+  justify-content:center;
+  /* background-image: url("https://unsplash.com/photos/a-black-background-with-a-blue-abstract-design-OfdOEdGYiuk") */
+  /* background-color: red; */
+}
+
+.view{
+  height:93vh;
+  width:100vw;
+  display:flex;
+  align-items: center;
+  justify-content:center;}
+
+  .det{
+    height:93vh;
+  width:100vw;
+  display:flex;
+  align-items: center;
+  justify-content:center;
+  }
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .itemy {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
