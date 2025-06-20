@@ -1,30 +1,30 @@
-import React from 'react'
-import { useLoaderData ,useNavigate} from 'react-router-dom'
+import React from 'react';
+import jacket from '../assets/jacket.png'
+import { useLoaderData, useNavigate } from 'react-router-dom';
 
 export default function ViewItems() {
-    const items = useLoaderData()
-    const navigate = useNavigate();
+  const items = useLoaderData();
+  const navigate = useNavigate();
 
-    const handleClick = ()=>{
-        navigate('/details')
-    }
+  const handleClick = (id) => {
+    navigate(`/details/${id}`);
+  };
 
-    return (
-      <div className='itemy' onClick={handleClick}>
-  {
-                      items?.map((item, index) => {
-                          return (
-                              <div key={index} className='card'>
-                                  {/* <img src={`http://localhost:3000/images/${item.coverImage}`} width="120px" height="100px"></img> */}
-                                  <div className='card-body'>
-                                      <div className='title'>{item.name}</div>
-                                          <div className='timer'>{item.type}</div>
-                                          <div className='timer'>{item.description}</div>
-                                   </div>
-                              </div>
-                          )
-                      })
-                  }
-      </div>
-    )
+  return (
+    <div className='itemy'>
+      {items?.map((item, index) => {
+        return (
+          <div key={index} className='card' onClick={() => handleClick(item._id)}>
+             <img src={jacket} width="120px" height="100px" /> 
+            <div className='card-body'>
+              <div className='title'>{item.name}</div>
+              <div className='timer'>{item.type}</div>
+              <div className='timer'>{item.description}</div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
 }
+

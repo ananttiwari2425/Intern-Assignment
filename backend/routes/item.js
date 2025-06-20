@@ -1,5 +1,5 @@
 const express = require('express')
-const {getItems,getItem,postItem} = require('../controller/item')
+const {getItems,postItem, getItem} = require('../controller/item')
 
 const router = express.Router();
 // const verifyToken = require('../middleware/auth')
@@ -11,7 +11,9 @@ const router = express.Router();
 // router.delete('/:id',deleteRecipe);
 
 router.get('/allitems',getItems);
-router.get('/item',getItem);
+router.get('/item/:id', getItem);
+
+// router.get('/item/:id', getItem);
 router.post('/add',postItem);
 
 module.exports = router;

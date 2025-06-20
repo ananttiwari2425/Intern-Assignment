@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import Add from './pages/Add'
 import View from './pages/View'
 import Details from './pages/Details'
+import Email from './pages/Email'
 import axios from 'axios'
 
 
@@ -16,6 +17,19 @@ const getAllItems=async()=>{
   })
   return allItems
 }
+
+const getItem = async({params})=>{
+  let item;
+  console.log("Getting item with id:", params.id);
+
+  await axios.get(`http://localhost:3000/item/${params.id}`)
+    .then(res => item = res.data);
+
+  return item;
+}
+
+
+
 
 // const getFavRecipes=()=>{
 //   return JSON.parse(localStorage.getItem("fav"))
@@ -47,8 +61,8 @@ const router=createBrowserRouter([
     {path:"/",element:<Home/>},
     {path:"/addItem",element:<Add/>},
     {path:"/getItems",element:<View/>,loader:getAllItems},
-    {path:"/details",element:<Details/>},
-    // {path:"/editRecipe/:id",element:<EditRecipe/>},
+    { path: "/details/:id", element: <Details />, loader: getItem },
+    {path:"/email",element:<Email/>},
     // {path:"/recipe/:id",element:<RecipeDetails/>,loader:getRecipe}
    ]}
  
