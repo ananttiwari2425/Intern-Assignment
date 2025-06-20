@@ -12,6 +12,8 @@ app.use(cors());
 // app.use(express.static('public'))
 
 app.use('/',require('./routes/item'));
+app.use('/user',require('./routes/user'));
+
 
 app.listen(PORT,()=>{
     console.log(`connected to ${PORT}`);
