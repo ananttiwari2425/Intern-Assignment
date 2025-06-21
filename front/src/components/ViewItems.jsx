@@ -1,5 +1,5 @@
 import React from 'react';
-import jacket from '../assets/jacket.png'
+import image from '../assets/image.jpg'
 import { useLoaderData, useNavigate } from 'react-router-dom';
 
 export default function ViewItems() {
@@ -15,7 +15,7 @@ export default function ViewItems() {
       {items?.map((item, index) => {
         return (
           <div key={index} className='card' onClick={() => handleClick(item._id)}>
-             <img src={jacket} width="120px" height="100px" /> 
+             <img src={image} width="120px" height="100px" /> 
             <div className='card-body'>
               <div className='title'>{item.name}</div>
               <div className='timer'>{item.type}</div>
