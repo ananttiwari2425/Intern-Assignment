@@ -7,6 +7,8 @@ export default function Add() {
 
     const [name,setName] = useState('');
     const [type,setType] = useState('');
+    const [cover,setCover] = useState('');
+    const [more,setMore] = useState('');
     const [description,setDescription] = useState('');
 
     const navigate = useNavigate();
@@ -19,10 +21,10 @@ export default function Add() {
         })
         .catch(data=>setError(data.response?.data?.error))
     }
+
     const handleClick2 = ()=>{
         navigate('/getItems')
       }
-
 
   return (
     <div>
@@ -30,11 +32,11 @@ export default function Add() {
     <form className='form' onSubmit = {handleOnSubmit}>
             <div className='form-control'>
                 <label>Name</label>
-                <input type="name" className='input' required onChange={(e)=>setName(e.target.value)}></input>
+                <input type="name" className='input' placeholder='Tell us about your product' required onChange={(e)=>setName(e.target.value)}></input>
             </div>
             <div className='form-control'>
             <label>Choose a Type:</label>
-<select name="type" className='input'>
+<select name="type" placeholder='Tell us about your product' className='input'>
   <option value="Shirt">Shirt</option>
   <option value="pant">pant</option>
   <option value="Shoes">Shoes</option>
@@ -43,20 +45,20 @@ export default function Add() {
 
 </select>
 <br></br>
-                <label>Type</label>
-                <input type="type" className='input' required onChange={(e)=>setType(e.target.value)}></input>
+                {/* <label>Type</label>
+                <input type="type" className='input' required onChange={(e)=>setType(e.target.value)}></input> */}
             </div>
             <div className='form-control'>
                 <label>Description</label>
-                <input type="description" className='input' required onChange={(e)=>setDescription(e.target.value)}></input>
+                <input type="description" className='input' placeholder='Tell us about your product' required onChange={(e)=>setDescription(e.target.value)}></input>
             </div>
             <div className='form-control'>
                 <label>CoverImage</label>
-                <input type="file" className='input'></input>
+                <input type="file" className='input' required onChange={(e)=>setCover(e.target.value)}></input>
             </div>
             <div className='form-control'>
                 <label>Add more Images</label>
-                <input type="file" className='input'></input>
+                <input type="file" className='input' multiple required onChange={(e)=>setMore(e.target.value)}></input>
             </div>
     
             <button type='submit'>Add</button>

@@ -1,4 +1,53 @@
 /* Reset defaults */
+/* Full-screen gradient background */
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #2A7B9B 0%, #57C785 50%, #EDDD53 100%);
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  color: #fff;
+  text-align: center;
+}
+
+/* Container styling */
+.homebox {
+  background: rgba(255, 255, 255, 0.1);
+  height:93vh;
+  width:100vw;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Button base style */
+.homebox button {
+  background: linear-gradient(45deg, #ff85ed, #42d7f5);
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  margin: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-position 0.4s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  background-size: 200% 200%;
+}
+
+/* Hover & active states */
+.homebox button:hover {
+  background-position: right center;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.homebox button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
 body, ul {
   margin: 0;
   padding: 0;
@@ -117,7 +166,7 @@ button[type="submit"]:active {
 
 
 /* Container holding all cards */
-.itemy {
+/* .itemy {
   display: grid;
   display:flex;
 
@@ -151,7 +200,119 @@ button[type="submit"]:active {
 
 .card-body {
   padding: 15px;
+} */
+
+/* Full-page gradient backdrop */
+.email {
+
+ height: 92vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ff9968, #ff5e63) no-repeat;
+  font-family: 'Varela Round', sans-serif;
+  padding: 20px;
 }
+
+/* Form container styling */
+.email .form {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Label styling */
+.form-control label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #555;
+}
+
+/* Input field styles */
+.form-control .input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control .input:focus {
+  border-color: #ff5e63;
+  box-shadow: 0 0 8px rgba(255,94,99,0.3);
+  outline: none;
+}
+
+/* Submit button styling */
+.form button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  margin-top: 16px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(45deg, #ff5e63, #ff9968);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-position 0.4s, transform 0.
+}
+
+.itemy {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;               /* space between cards */
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.card {
+  flex: 0 1 calc(33.333% - 13.33px);
+  /* ensures ~3 cards per row, accounting for gaps */
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 16px;
+  flex: 1;
+}
+
+.card-body .title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.card-body .timer {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 4px;
+}
+
 
 .title {
   font-size: 18px;
@@ -182,15 +343,7 @@ button[type="submit"]:active {
   word-wrap: break-word;
 }
 
-.homebox{
-  height:93vh;
-  width:100vw;
-  display:flex;
-  align-items: center;
-  justify-content:center;
-  /* background-image: url("https://unsplash.com/photos/a-black-background-with-a-blue-abstract-design-OfdOEdGYiuk") */
-  /* background-color: red; */
-}
+
 
 .view{
   height:93vh;
@@ -200,7 +353,7 @@ button[type="submit"]:active {
   justify-content:center;}
 
   .det {
-    height:90vh;
+    height:85vh;
     width:100vw;
     background-color: #ffffff;
     padding: 20px 30px;
@@ -221,7 +374,20 @@ button[type="submit"]:active {
     margin: 10px 0;
     color: #333;
     font-weight: 600;
+    font-size: 30px;
+  }
+
+  .det p {
+    margin: 10px 0;
+    color: #333;
+    font-weight: 100;
     font-size: 20px;
+  }
+  .det h1 {
+    margin: 10px 0;
+    color: #333;
+    font-weight: 1000;
+    font-size: 40px;
   }
   
   .det button {

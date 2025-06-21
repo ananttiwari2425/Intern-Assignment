@@ -15,8 +15,8 @@ export default function Email() {
         })
     }
   return (
-    <div>
-         <form className='form' onSubmit = {handleOnSubmit}>
+    <div className='email'>
+         <form className='form' name ='email'onSubmit = {handleOnSubmit}>
         <div className='form-control'>
                 <label>Email</label>
                 <input type="email" className='input' required onChange={(e)=>setEmail(e.target.value)}></input>
