@@ -199,13 +199,47 @@ button[type="submit"]:active {
   align-items: center;
   justify-content:center;}
 
-  .det{
-  height:93vh;
-  width:100vw;
-  display:flex;
-  align-items: center;
-  justify-content:center;
+  .det {
+    height:90vh;
+    width:100vw;
+    background-color: #ffffff;
+    padding: 20px 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 30px auto;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: transform 0.2s ease-in-out;
   }
+  
+  .det:hover {
+    transform: scale(1.02);
+  }
+  
+  .det h2 {
+    margin: 10px 0;
+    color: #333;
+    font-weight: 600;
+    font-size: 20px;
+  }
+  
+  .det button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .det button:hover {
+    background-color: #0056b3;
+  }
+  
 
 /* Responsive adjustments */
 @media (max-width: 600px) {
