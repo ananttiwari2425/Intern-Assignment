@@ -17,6 +17,7 @@ export default function Add() {
         e.preventDefault();
         await axios.post('http://localhost:3000/add',{name,type,description})
         .then((res)=>{
+            alert('item added')
             navigate('/')
         })
         .catch(data=>setError(data.response?.data?.error))
@@ -32,7 +33,7 @@ export default function Add() {
     <form className='form' onSubmit = {handleOnSubmit}>
             <div className='form-control'>
                 <label>Name</label>
-                <input type="name" className='input' placeholder='Tell us about your product' required onChange={(e)=>setName(e.target.value)}></input>
+                <input type="name" className='input' placeholder='Name' required onChange={(e)=>setName(e.target.value)}></input>
             </div>
             <div className='form-control'>
             <label>Choose a Type:</label>
@@ -54,11 +55,11 @@ export default function Add() {
             </div>
             <div className='form-control'>
                 <label>CoverImage</label>
-                <input type="file" className='input' required onChange={(e)=>setCover(e.target.value)}></input>
+                <input type="file" className='input'onChange={(e)=>setCover(e.target.value)}></input>
             </div>
             <div className='form-control'>
                 <label>Add more Images</label>
-                <input type="file" className='input' multiple required onChange={(e)=>setMore(e.target.value)}></input>
+                <input type="file" className='input' multiple  onChange={(e)=>setMore(e.target.value)}></input>
             </div>
     
             <button type='submit'>Add</button>
